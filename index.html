@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Presente de Dia dos Namorados</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
+    body {
+      text-align: center;
+      font-family: 'Parisienne', cursive;
+      background-color: #fceef5;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: #e74c3c;
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+    }
+
+    .love-page {
+      display: none;
+    }
+
+    p {
+      color: #c0392b;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .heart {
+      color: white;
+      font-size: 30px;
+    }
+
+    .custom-button {
+      display: inline-block;
+      background-color: #e74c3c;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+      position: relative;
+    }
+
+    .custom-button:hover {
+      background-color: #c0392b;
+    }
+
+    .heart-animation {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      animation-name: float;
+      animation-duration: 3s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(-100vw, -100vh);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .custom-button {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .heart {
+        font-size: 24px;
+      }
+    }
+
+    /* Estilos para a segunda página */
+    .love-page p,
+    .love-page h1 {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+  <script>
+    function showLovePage() {
+      document.getElementById("main-page").style.display = "none";
+      document.getElementById("love-page").style.display = "block";
+    }
+
+    function createHearts() {
+      var heartContainer = document.getElementById("heart-container");
+      var phrase = "minha garotinha";
+      for (var i = 0; i < phrase.length; i++) {
+        var heart = document.createElement("span");
+        heart.innerHTML = "&hearts;";
+        heart.classList.add("heart-animation");
+        heart.style.left = Math.random() * (window.innerWidth - 40) + "px";
+        heart.style.top = Math.random() * (window.innerHeight - 40) + "px";
+        heart.style.animationDelay = Math.random() * 3 + "s";
+        heartContainer.appendChild(heart);
+      }
+    }
+  </script>
+</head>
+<body onload="createHearts()">
+  <div id="main-page">
+    <h1>Presente de Dia dos Namorados <span class="heart">&hearts;</span></h1>
+    <button class="custom-button" onclick="showLovePage()"><span class="heart">&hearts;</span> Para Maria <span class="heart">&hearts;</span></button>
+    <div id="heart-container"></div>
+    <p style="font-size: 24px; margin-top: 20px;">minha garotinha</p>
+  </div>
+
+  <div id="love-page" class="love-page">
+    <h1 style="color: #c0392b;">Te amo muito! <span class="heart">&hearts;</span></h1>
+    <img src="https://www.freepnglogos.com/uploads/hello-kitty-png/hello-kitty-with-balloons-transparent-png-stickpng-3.png" alt="Imagem de amor" style="width: 200px; height: auto;">
+    <p style="color: #e74c3c;">Aqui está uma música especial para você:</p>
+    <audio controls>
+      <source src="C:\Users\mban6\Downloads/k a m a i t a c h i - Cabelos Arco-íris (256 kbps).mp3" type="audio/mpeg">
+      Seu navegador não suporta a reprodução de áudio.
+    </audio>
+    <p style="color: #e74c3c;">Texto dedicado a você:</p>
+    <p>Minha garotinha, neste <span style="color: #e74c3c;">Dia dos Namorados</span>, quero expressar todo o meu amor por você. Sua presença em minha vida traz <span style="color: #e74c3c;">luz</span>, <span style="color: #e74c3c;">alegria</span> e <span style="color: #e74c3c;">felicidade</span>. Eu te amo tanto. Você foi e sempre será a primeira garota que eu senti algo verdadeiro <span style="color: #e74c3c;"></span> você faz meu coração saltar. Você é uma das pessoas mais especiais do mundo para mim, e meu coração é seu para sempre. <span style="color: #e74c3c;">Sempre estarei aqui para te proteger de tudo</span>. Feliz Dia dos Namorados, meu amor!</p>
+  </div>
+</body>
+</html>
